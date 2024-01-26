@@ -9,44 +9,48 @@ import static org.testng.Assert.assertEquals;
 
 public class TestCashBackHackService {
     @Test
-    public void upperLimit(){
+    public void upperLimit() {
         CashBackHackService cashBack = new CashBackHackService();
 
         int actual = cashBack.remain(999);
         int expected = 1;
-        assertEquals (actual, expected);
+        assertEquals(actual, expected);
     }
+
     @Test
-    public void beyondUpperLimit (){
+    public void beyondUpperLimit() {
         CashBackHackService cashBack = new CashBackHackService();
 
         int actual = cashBack.remain(1001);
         int expected = 999;
-        assertEquals (actual, expected);
+        assertEquals(actual, expected);
     }
+
     @Test
-    public void bottomLine (){
+    public void bottomLine() {
         CashBackHackService cashBack = new CashBackHackService();
 
         int actual = cashBack.remain(1);
         int expected = 999;
-        assertEquals (actual, expected);
+        assertEquals(actual, expected);
     }
+
     @Test
-    public void ifNeedZeroAmount (){
+    public void ifNeedZeroAmount() {
         CashBackHackService cashBack = new CashBackHackService();
 
         int actual = cashBack.remain(1000);
         int expected = 0;
-        assertEquals (actual, expected);
+        assertEquals(actual, expected);
     }
+
     @Test
-    public void ifNeedFullAmount (){
+    public void ifNeedFullAmount() {
         CashBackHackService cashBack = new CashBackHackService();
 
         int actual = cashBack.remain(0);
         int expected = 1000;
-        assertEquals (actual, expected);
+        assertEquals(actual, expected);
     }
 
 }
