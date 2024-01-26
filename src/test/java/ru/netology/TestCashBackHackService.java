@@ -1,9 +1,6 @@
 package ru.netology;
-
-
 import org.testng.annotations.Test;
 import ru.netology.service.CashBackHackService;
-
 import static org.testng.Assert.assertEquals;
 
 
